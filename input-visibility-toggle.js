@@ -24,12 +24,16 @@
             
             var otherInput = document.getElementById(otherInputId);
             if (otherInput) {
-                otherInput.style.display = (selectedValue === inputValue) ? '' : 'none';
+                otherInput.style.display = (selectedValue === inputValue) ? 'block' : 'none';
             }
         }
 
         inputs.forEach(function(input) {
             input.addEventListener('change', toggleVisibility);
+
+            // Initial visibility check
+            var event = new Event('change');
+            input.dispatchEvent(event);
         });
     }
 
