@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Input Example</title>
+    <style>
+        #otherInput, #otherInputCheckbox, #otherInputSelect {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Toggle Input Example</h1>
+    
+    <h2>Radio Button Example</h2>
+    <label><input type="radio" name="exampleRadio" value="showInput"> Show Input</label>
+    <label><input type="radio" name="exampleRadio" value="hideInput"> Hide Input</label>
+    <input type="text" id="otherInput" placeholder="Other Input for Radio">
+
+    <h2>Checkbox Example</h2>
+    <label><input type="checkbox" name="exampleCheckbox" value="showInput"> Show Input</label>
+    <input type="text" id="otherInputCheckbox" placeholder="Other Input for Checkbox">
+
+    <h2>Select Example</h2>
+    <select name="exampleSelect">
+        <option value="">Select an option</option>
+        <option value="showInput">Show Input</option>
+        <option value="hideInput">Hide Input</option>
+    </select>
+    <input type="text" id="otherInputSelect" placeholder="Other Input for Select">
+    
+    <script src="../input-visibility-toggle.js"></script>
+    <script>
+        // Initialize the toggle functionality
+        toggleInputVisibility('exampleRadio', 'showInput', 'otherInput');
+        toggleInputVisibility('exampleCheckbox', 'showInput', 'otherInputCheckbox');
+        toggleInputVisibility('exampleSelect', 'showInput', 'otherInputSelect');
+    </script>
+</body>
+</html>
